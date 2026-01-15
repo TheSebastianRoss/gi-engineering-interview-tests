@@ -29,6 +29,7 @@ namespace Test1.Controllers
 
             const string sql = @"
 SELECT
+    UID,
     Guid,
     Name,
     Address,
@@ -58,6 +59,7 @@ FROM location;";
 
             const string sql = @"
 SELECT
+    UID,
     Guid,
     Name,
     Address,
@@ -170,8 +172,9 @@ INSERT INTO location (
                 return BadRequest("Unable to delete location");
         }
 
-        public class LocationDto 
+        public class LocationDto
         {
+            public int UID {get;set;}
             public Guid Guid {get;set;}
             public string Name {get;set;}
             public string Address {get;set;}
